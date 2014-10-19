@@ -12,6 +12,8 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * @author sefverl.balasingam@outlook.com
  */
 
 package com.nascar.rest;
@@ -51,7 +53,7 @@ public class NascarPitStopApiService {
 
     }
 
-    private static void addPitstopDataFromLiveFeed(String feedUrl, ConfigurableApplicationContext context) {
+    private static void addPitstopDataFromLiveFeed(String feedUrl, ConfigurableApplicationContext context) throws Exception {
         RestTemplate restTemplate = new RestTemplate();
         PitstopRepository pitstopRepository = context.getBean(PitstopRepository.class);
 

@@ -1,0 +1,30 @@
+NASCAR Pitstop API Service
+INFO:
+
+  PACKAGING:
+    Export the project into a jar file
+    Make sure all Maven dependencies are satisfied
+
+  EXECUTION:
+    Make sure the livefeed API server is running @ localhost:9000 and has path: /api/livefeed
+    Execute the jar file
+
+  RESOURCE MAPPINGS
+    /
+      Shows all supported JPA REST resources
+
+    /pitstops
+      REST API root path for CRUD operations on pitstops (using JSON)
+
+      /
+      POST -> Create new Pitstop
+
+      /{id}
+      PUT -> Replace values of pitstop with {id} with provided values
+      PATCH -> Update one or more fields of a pitstop with {id}
+      DELETE -> Delete pitstop with {id} (disabled)
+
+    /display/pitstops
+      Displays the contents of the pitstops database (which consists of the data imported from the aforementioned
+      JSON live feed) as an HTML table
+

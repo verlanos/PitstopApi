@@ -20,6 +20,9 @@ public class Pitstop {
     @Column(nullable = false)
     private double outTime;
 
+    @Column(nullable = true)
+    private String comment;
+
     protected Pitstop() {
     }
 
@@ -52,14 +55,25 @@ public class Pitstop {
         return vehicleNumber;
     }
 
+    public String getComment() {
+        return comment;
+    }
+
     public static class Builder {
         Pitstop built;
+        String comment = "";
 
         Builder(int vehicleNumber, double inTime, double outTime) {
             built = new Pitstop();
             built.vehicleNumber = vehicleNumber;
             built.inTime = inTime;
             built.outTime = outTime;
+            built.comment = comment;
+        }
+
+        public Builder setComment(String comment) {
+            built.comment = comment;
+            return this;
         }
 
         public Pitstop build() {
